@@ -1,21 +1,27 @@
 \documentclass[letterpaper,12pt,oneside]{report}
 \usepackage[margin=0pt]{geometry}
 \usepackage{pdfpages}
-
 \usepackage{graphicx}
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
 \begin{document}
 
 %% for images
 
 %\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=\textwidth]{Capture.png}
+    \centering
+%    \includegraphics[width=\textwidth]{image.png}
 %\end{figure}
 %\newpage
 
 %% for pdfs
-
-%\includepdf[pages={-}]{File.pdf}
-
+%\afterpage{\blankpage} % include blank pages after this one
+%\includepdf[pages={-}]{p1.PDF}
 
 \end{document}
